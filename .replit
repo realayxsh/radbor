@@ -1,0 +1,9 @@
+run="node website.js"
+
+[deployment]
+deploymentTarget = "gce"
+run = ["sh", "-c", "node website.js"]
+ignorePorts = true
+
+[[ports]]
+localPort = 80
