@@ -96,7 +96,7 @@
   outline-offset: 3px;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .nav-bar .nav-mobile-login {
     display: none !important;
   }
@@ -177,7 +177,24 @@
   color: #ffdc8a !important;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 991px) {
+  .nav-bar .navbar-wrapper {
+    width: calc(100% - 24px);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .nav-bar .nav-left {
+    min-width: 0;
+    margin-left: 0;
+  }
+
+  .nav-bar .nav-logo {
+    flex: 0 0 auto;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
   .nav-bar .nav-right {
     align-items: center;
     gap: 8px;
@@ -254,7 +271,7 @@
   padding: 72px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  background: radial-gradient(ellipse at 78% 50%, rgba(244, 24, 50, 0.16), transparent 36%), linear-gradient(110deg, #121620, #18171a 58%, #1a1215);
+  background: radial-gradient(ellipse at 78% 50%, rgba(213, 164, 73, 0.18), transparent 36%), linear-gradient(110deg, #121620, #191819 58%, #19150f);
   color: #fff;
 }
 
@@ -280,7 +297,7 @@
 }
 
 .home-premium-kicker {
-  color: #ff6572;
+  color: #f0c46c;
 }
 
 .premium-eyebrow {
@@ -309,12 +326,12 @@
   aspect-ratio: 1;
   place-items: center;
   justify-self: center;
-  color: #ff6572;
+  color: #f0c46c;
 }
 
 .premium-orbit {
   position: absolute;
-  border: 1px solid rgba(244, 24, 50, 0.48);
+  border: 1px solid rgba(240, 196, 108, 0.5);
   border-radius: 50%;
 }
 
@@ -325,14 +342,23 @@
 
 .premium-orbit-two {
   inset: 4%;
-  border-color: rgba(244, 24, 50, 0.24);
+  border-color: rgba(240, 196, 108, 0.24);
   transform: rotate(28deg) scaleX(0.72);
 }
 
 .premium-note {
   font-size: 88px;
   line-height: 1;
-  text-shadow: 0 0 36px rgba(244, 24, 50, 0.38);
+  text-shadow: 0 0 36px rgba(240, 196, 108, 0.34);
+}
+
+.home-premium-teaser .button {
+  background: #e8b94f;
+  color: #17130d;
+}
+
+.home-premium-teaser .button:hover {
+  background: #f2cf7d;
 }
 
 .feature-preview {

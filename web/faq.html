@@ -27,7 +27,7 @@
                           <link href="/radio-logo.png" rel="apple-touch-icon" />
                       </head>
 
-                      <body>
+                      <body class="faq-page">
                           <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav-bar w-nav">
                               <div class="navbar-wrapper">
                                   <div class="nav-left"><a href="/" aria-current="page" class="nav-logo w-nav-brand w--current"><img src="/radio-logo.png" loading="lazy" alt="Radio bot logo"/></a>
@@ -53,37 +53,43 @@
                                   </div>
                               </div>
                           </div>
-                          <div class="section">
-                              <div class="wrapper">
-                                  <div class="faq-grid">
-                                      <div class="faq-title-container">
-                                          <div class="faq-title-sticky">
-                                              <h2>Frequently Asked Questions</h2>
-                                          </div>
-                                      </div>
-                                      <div class="faq-questions-grid">
-                                          <div class="faq-item">
-                                              <h6>How do I add Radio Bots to my server?</h6>
-                                              <p class="faq-answer-text">You can add Radio Bots to your Discord server by clicking on the invite button. You must have a role with the “Administrator” or the “Manage Server” permission to be able to add to your Discord Server.</p>
-                                          </div>
-                                          <div class="faq-item">
-                                              <h6>How do I get started with using Radio?</h6>
-                                              <p class="faq-answer-text">So you've already invited Radio (if not, go ahead and do it now!) and want to know how to get started with using it? In that case you should definitely go ahead...</p>
-                                          </div>
-                                          <div class="faq-item">
-                                              <h6>How do I play music with the bot?</h6>
-                                              <p class="faq-answer-text">Adding music to the playlist is pretty simple. To start playing a track, use the /play command. Here are two examples:<br>
-                      /play https://open.spotify.com/track/62PaSfnXSMyLshYJrlTuL3<br>
-                      /play hello</p>
-                                          </div>
-                                          <div class="faq-item">
-                                              <h6>How to set the bot 24/7 in VC?</h6>
-                                              <p class="faq-answer-text">First you have to join the voice channel there you can set the bot 24/7 then you can simply set the bot 24/7 by using /24/7.</p>
-                                          </div>
-                                      </div>
-                                  </div>
+                          <header class="faq-hero">
+                              <div class="wrapper faq-hero-inner">
+                                  <div class="faq-kicker">RADIO / HELP CENTER</div>
+                                  <h1>Questions, <span>answered.</span></h1>
+                                  <p>Quick help for inviting Radio, starting playback, and keeping music on in your server.</p>
                               </div>
-                          </div>
+                          </header>
+                          <main class="faq-content">
+                              <div class="wrapper faq-content-inner">
+                                  <aside class="faq-intro">
+                                      <span class="faq-section-label">GETTING STARTED</span>
+                                      <h2>Make Radio part of your server.</h2>
+                                      <p>Choose a question to see the answer. For anything else, reach us in the support server.</p>
+                                      <a class="button w-button faq-invite-button" href="https://discord.com/api/oauth2/authorize?client_id=1097475016880304180&amp;permissions=8&amp;scope=applications.commands%20bot">Invite Radio</a>
+                                      <a class="faq-support-link" href="https://discord.com/invite/3KqsXcFps4">Visit support <span aria-hidden="true">↗</span></a>
+                                  </aside>
+                                  <section class="faq-list" aria-label="Frequently asked questions">
+                                      <details class="faq-entry">
+                                          <summary><span class="faq-entry-number">01</span><span class="faq-entry-title">How do I add Radio to my server?</span><span class="faq-entry-toggle" aria-hidden="true"></span></summary>
+                                          <div class="faq-answer"><p>Use the <a href="https://discord.com/api/oauth2/authorize?client_id=1097475016880304180&amp;permissions=8&amp;scope=applications.commands%20bot">Invite Radio</a> link. You’ll need the <strong>Manage Server</strong> or <strong>Administrator</strong> permission in Discord to add a bot.</p></div>
+                                      </details>
+                                      <details class="faq-entry">
+                                          <summary><span class="faq-entry-number">02</span><span class="faq-entry-title">How do I get started?</span><span class="faq-entry-toggle" aria-hidden="true"></span></summary>
+                                          <div class="faq-answer"><p>Join a voice channel, then use <code>/play</code> with a song title or supported music link. Browse the <a href="/commands">command list</a> for playback and queue controls.</p></div>
+                                      </details>
+                                      <details class="faq-entry">
+                                          <summary><span class="faq-entry-number">03</span><span class="faq-entry-title">How do I play a song?</span><span class="faq-entry-toggle" aria-hidden="true"></span></summary>
+                                          <div class="faq-answer"><p>Use <code>/play</code> followed by a track link or a search phrase, for example:</p><pre><code>/play https://open.spotify.com/track/62PaSfnXSMyLshYJrlTuL3
+/play hello</code></pre></div>
+                                      </details>
+                                      <details class="faq-entry">
+                                          <summary><span class="faq-entry-number">04</span><span class="faq-entry-title">How do I keep Radio in voice 24/7?</span><span class="faq-entry-toggle" aria-hidden="true"></span></summary>
+                                          <div class="faq-answer"><p>Join the voice channel first, then run <code>/247</code>. Your server may need to meet the bot’s current vote or Premium requirements; see the <a href="/premium">Premium plans</a> for paid options.</p></div>
+                                      </details>
+                                  </section>
+                              </div>
+                          </main>
                           <div class="footer">
                               <div class="footer-top">
                                   <div class="wrapper">

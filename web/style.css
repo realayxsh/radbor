@@ -2813,7 +2813,7 @@
    color: #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
    .nav-bar .navbar-wrapper {
       width: min(94%, 1280px);
       margin-right: auto;
