@@ -49,30 +49,33 @@
                                                                         <main class="legal-content">
                                                                             <div class="wrapper legal-content-wrapper">
                                                                                 <article class="legal-document">
-                                                                                    <div class="legal-document-head"><span>01 / PRIVACY</span><span>RADIO POLICY</span></div>
-                                                                                    <p class="legal-intro">We at Radio know you care about your personal information and we take your privacy seriously. Please read the following to learn more about our Privacy Policy. We only ask you to provide personal information when it is needed to provide services to you. All personal information is collected by fair and lawful means, with your full knowledge and consent. We will also let you know why we’re collecting it and how it will be used. Radio does not sell personal information for advertising or marketing purposes. Information may be sent to service providers when needed to provide a service you request, as described below.</p>
-                                                                                    <h2>Information saved by Radio services</h2>
-                                                                                    <p>Following Information is saved by Radio services only for proper function of them:</p>
-                                                                                    <ul>
-                                                                                        <li>User Ids ( To link you and your server members with your saved configurations)</li>
-                                                                                        <li>Server Ids ( Only stored in some circumstances for information like your language preferences, server config in case of moderation bots and levelling bots)</li>
-                                                                                        <li>Channel Ids ( For command overwrites and configurations that are specific to channels )</li>
-                                                                                        <li>Role Ids ( For command overwrites and configurations that are specific to roles)</li>
-                                                                                        <li>Message Ids ( For message specific features like role menu, reaction roles, reaction verification)</li>
-                                                                                        <li>Any user supplied content that can include text for greetings, reminders, rank cards</li>
-                                                                                    </ul>
-                                                                                    <h2>Retention and protection</h2>
-                                                                                    <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we do collect, we’ll protect using commercially reasonable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification.</p>
-                                                                                    <h2>Premium checkout and payments</h2>
-                                                                                    <p>Premium checkout uses Discord OAuth to receive the signed-in account’s user ID and username; Radio does not request your Discord password. If you submit payment proof, we also receive the payment reference, plan details, optional server ID, and screenshot. The screenshot is held temporarily in memory by the website and forwarded to our configured private Discord review channel through Discord’s webhook service; the website does not save a copy. Discord handles the submitted content under its own policies. Do not upload screenshots containing passwords, recovery codes, or unrelated private information. The Litecoin/INR quote request contains no personal information.</p>
-                                                                                    <h2>External sites</h2>
-                                                                                    <p>Our site may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
-                                                                                    <h2>Your choices and regional rights</h2>
-                                                                                    <p>You can always opt not to disclose information to us, but keep in mind you may need to provide some information to us in order to take advantage of some of our services and features.</p>
-                                                                                    <p>If you are a resident of the European Union, United Kingdom, Lichtenstein, Norway, or Iceland, you may have additional rights under the EU General Data Protection Regulation (the “GDPR”) with respect to your Personal Data. In this event, please refer to our GDPR Privacy Notice, as it applies to you too.</p>
-                                                                                    <h2>Questions</h2>
-                                                                                    <p>If you have any questions or concerns regarding our privacy policies, please send us a detailed message to our Discord support server, and we will try to resolve your concerns.</p>
-                                                                                </article>
+  <div class="legal-document-head"><span>01 / PRIVACY</span><span>RADIO BOT + WEBSITE</span></div>
+  <p class="legal-intro">This Privacy Policy explains how Radio handles information when you use the Radio Discord bot, radiomusic.in, and Premium checkout. We process information to provide requested features, maintain server settings, review payment submissions, and protect the service. We do not sell personal information.</p>
+
+  <h2>Information the bot processes</h2>
+  <p>The bot receives Discord identifiers needed to respond and apply settings, such as user, server, and channel IDs. It may process message text in memory to recognize prefix commands and their arguments. The command logger records command names and source, together with user, server, and channel IDs; it is designed not to record command arguments or message contents.</p>
+    <p>The bot does not request Discord’s Server Members or Presence intents. Prefix-command message content is requested only when Discord enables the relevant application flag; slash commands are available as an alternative where message-content access is unavailable.</p>
+  <p>Depending on the features enabled, the bot stores server settings in MongoDB, including command prefixes, 24/7 and autoplay settings, disabled channels, no-prefix access lists, custom server bot icon or banner URLs, Premium entitlements, and Premium codes. The database is operated using the connection configured by the bot owner.</p>
+
+  <h2>Operational logs and Discord</h2>
+  <p>If enabled by the bot operator, join and leave logs can include server name and ID, member counts, and server-owner details when the bot joins. Music and system logs can include server or channel identifiers and playback or connection events. Error logs are designed to omit raw error stacks and request bodies. These logs are sent to operator-configured Discord webhooks; Discord processes them under its own policies.</p>
+
+  <h2>Discord login and cookies</h2>
+  <p>When you sign in to the website with Discord, we request your public profile using the identify scope: Discord user ID, username, display name when available, and avatar. We do not receive or ask for your Discord password. The website uses an HttpOnly, SameSite=Lax session cookie, marked Secure in production, with a configured lifetime of up to seven days.</p>
+
+  <h2>Premium payments and submissions</h2>
+  <p>To submit payment proof, the website associates your Discord account with the plan, billing period, payment method, quoted amount, quote reference, submission date, and review status. You may also submit a Discord server ID. UPI proof requires a UTR and screenshot; Litecoin proof requires a public blockchain transaction link. The website stores payment submission records in its configured payment-data directory so they can be shown in your account and reviewed. The current system does not automatically delete these records.</p>
+  <p>UPI screenshots are held in memory while being forwarded to the private Discord review webhook; the website does not save a screenshot copy to its payment-history file. Discord receives the submitted proof and handles it under its own policies. Never upload passwords, recovery phrases, private keys, or unrelated private documents. Litecoin/INR quotes use CoinGecko’s public price endpoint and do not include your identity or payment details.</p>
+
+  <h2>Other providers</h2>
+  <p>Radio relies on Discord for bot, login, and webhook features; MongoDB for bot settings; audio providers and Lavalink infrastructure for playback; and CoinGecko for Litecoin price quotes. These providers process information under their own privacy policies. External links are governed by the destination site’s policies.</p>
+
+  <h2>Retention and privacy requests</h2>
+  <p>Bot settings are retained while needed for the related feature. Some settings are removed when the bot leaves a server, but this does not automatically clear every record. Website payment history remains in the configured data directory until the operator removes it. To request access, correction, or deletion, contact <a href="https://discord.gg/radiomusic">Radio Support</a> or <a href="mailto:radiobotmanager@gmail.com">email Radio</a>. Some information may be retained when needed for security, payment disputes, or legal obligations.</p>
+
+  <h2>Age, changes, and contact</h2>
+  <p>Use of the bot and website is subject to Discord’s minimum age and any higher age requirement under applicable law. We may update this Policy when the service or data practices change; the current version will be posted here. For privacy questions, contact <a href="https://discord.gg/radiomusic">Radio Support</a> or <a href="mailto:radiobotmanager@gmail.com">radiobotmanager@gmail.com</a>.</p>
+</article>
                                                                             </div>
                                                                         </main>
                                                                         <footer class="footer legal-footer">
