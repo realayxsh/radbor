@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete Payment | Radio Premium</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page" data-checkout-page="payment">
+        <div class="checkout-stepper" aria-label="Checkout progress">
+            <a class="checkout-step is-complete" data-back-method href="/premium/payment-method"><b>01</b><span>Method</span></a>
+            <i></i><span class="checkout-step is-active"><b>02</b><span>Payment</span></span>
+            <i></i><span class="checkout-step"><b>03</b><span>Confirmation</span></span>
+        </div>
+        <header class="checkout-heading">
+            <div class="subtitle">YOUR CHECKOUT</div>
+            <h1 data-payment-title>Preparing payment…</h1>
+            <p>Use the exact amount below, then continue to confirm your payment.</p>
+        </header>
+        <section class="payment-checkout checkout-card checkout-payment-card">
+            <div class="checkout-plan-summary">
+                <span class="checkout-kicker">ORDER SUMMARY</span>
+                <h2 data-payment-plan></h2>
+                <span class="checkout-lock">Manual payment review</span>
+            </div>
+            <div class="payment-qr-layout">
+                <div class="payment-qr-column">
+                    <p class="checkout-kicker">SCAN TO PAY</p>
+                    <div class="payment-qr-wrap" data-qr-wrap hidden>
+                <img class="payment-qr" data-payment-qr alt="Payment QR code" hidden>
+                    </div>
+                    <p class="payment-qr-caption" data-qr-caption hidden>Scan this code in your payment app</p>
+                </div>
+                <div class="payment-details-column">
+                    <span class="checkout-kicker">AMOUNT TO PAY</span>
+                    <p class="payment-amount" data-payment-amount></p>
+                    <p class="payment-detail-text" data-payment-detail></p>
+                    <div class="payment-countdown-card">
+                        <span class="countdown-pulse" aria-hidden="true"></span>
+                        <span data-payment-countdown role="timer" aria-live="polite">Creating your payment quote…</span>
+                    </div>
+                    <div class="payment-quote-actions">
+                        <a class="button w-button" data-open-payment href="#" hidden>Open UPI payment app</a>
+                        <button class="button w-button" data-copy-crypto type="button" hidden>Copy Litecoin address</button>
+                        <button class="payment-refresh-button" data-refresh-quote type="button">Refresh quote</button>
+                    </div>
+                    <p class="litecoin-copy-status" data-copy-status aria-live="polite"></p>
+                </div>
+            </div>
+            <div class="payment-safety-note">
+                <span class="checkout-info-icon">i</span>
+                <p>The one-minute timer is a quote reminder—it cannot cancel or verify a transfer. If it expires before you pay, refresh the QR. Already paid? You can still continue.</p>
+            </div>
+            <p class="payment-submit-status" data-page-status role="status" aria-live="polite"></p>
+            <a class="button w-button payment-continue-button" data-approve-payment href="/premium/submit" hidden><span>I've completed payment</span><span aria-hidden="true">→</span></a>
+        </section>
+        <a class="payment-back-link" data-back-method href="/premium/payment-method"><span aria-hidden="true">←</span> Change payment method</a>
+        <p class="checkout-footer-note">Questions about your payment? <a href="https://discord.com/invite/3KqsXcFps4">Contact support</a></p>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>

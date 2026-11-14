@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Review Payment | Radio</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>REVIEW</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page account-page" data-checkout-page="review">
+        <header class="checkout-heading">
+            <div class="subtitle">PRIVATE PAYMENT REVIEW</div>
+            <h1>Review submission</h1>
+            <p>Choose approve or decline after checking the payment details.</p>
+        </header>
+        <section class="checkout-card account-card">
+            <div class="review-summary">
+                <div><span class="checkout-kicker">PLAN</span><strong data-review-plan>Loading…</strong></div>
+                <div><span class="checkout-kicker">PAYMENT</span><strong data-review-payment>Loading…</strong></div>
+                <div><span class="checkout-kicker">DISCORD USER</span><strong data-review-user>Loading…</strong></div>
+            </div>
+            <p class="review-warning">Website approval records the review decision and starts the website countdown. It does not activate or remove Premium in the bot.</p>
+            <div class="review-actions" data-review-actions hidden>
+                <button class="button w-button" data-approve-review type="button">Approve payment</button>
+                <button class="review-decline-button" data-show-decline type="button">Decline</button>
+            </div>
+            <form class="review-decline-form" data-decline-form hidden>
+                <label for="decline-reason">Reason for declining</label>
+                <textarea id="decline-reason" data-decline-reason maxlength="1000" required placeholder="Explain what needs to be corrected"></textarea>
+                <button class="review-decline-button" type="submit">Confirm decline</button>
+            </form>
+            <p class="payment-submit-status" data-review-status role="status" aria-live="polite"></p>
+        </section>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>

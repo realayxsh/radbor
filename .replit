@@ -3,7 +3,7 @@ run="node website.js"
 [deployment]
 deploymentTarget = "gce"
 run = ["sh", "-c", "node website.js"]
-ignorePorts = true
 
 [[ports]]
-localPort = 80
+localPort = 3000
+externalPort = 80

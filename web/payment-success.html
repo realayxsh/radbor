@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Payment Proof Submitted | Radio Premium</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page payment-success-page" data-checkout-page="success">
+        <div class="checkout-stepper" aria-label="Checkout progress">
+            <span class="checkout-step is-complete"><b>✓</b><span>Method</span></span>
+            <i></i><span class="checkout-step is-complete"><b>✓</b><span>Payment</span></span>
+            <i></i><span class="checkout-step is-complete"><b>✓</b><span>Submitted</span></span>
+        </div>
+        <section class="payment-checkout checkout-card payment-success-card">
+            <div class="success-checkmark" aria-hidden="true">
+                <svg viewBox="0 0 96 96" fill="none">
+                    <circle class="success-check-circle" cx="48" cy="48" r="42"></circle>
+                    <path class="success-check-path" d="m28 49 13 13 28-29"></path>
+                </svg>
+            </div>
+            <div class="success-eyebrow"><span></span> PROOF RECEIVED</div>
+            <h1>Successfully submitted</h1>
+            <p class="success-lead">Your payment proof is in the review queue. Please wait while our team checks it.</p>
+            <div class="success-review-status">
+                <span class="review-status-dot" aria-hidden="true"></span>
+                <span><strong>Waiting for review</strong><small>Premium is not activated until payment is verified.</small></span>
+            </div>
+            <div class="success-submission-summary">
+                <div><span>PLAN</span><strong data-success-plan>Loading…</strong></div>
+                <div><span>PAYMENT</span><strong data-success-method>Loading…</strong></div>
+                <div><span>DISCORD ACCOUNT</span><strong data-success-user>Loading…</strong></div>
+                <div><span>SUBMITTED</span><strong data-success-date>Loading…</strong></div>
+            </div>
+            <p class="payment-submit-status" data-success-status role="status" aria-live="polite"></p>
+            <div class="success-actions">
+                <a class="button w-button" href="https://discord.com/invite/3KqsXcFps4">Go to support</a>
+                <a class="success-home-link" href="/">Back to Radio home</a>
+            </div>
+        </section>
+        <p class="checkout-footer-note">Keep your transfer receipt in case the review team needs more information.</p>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>

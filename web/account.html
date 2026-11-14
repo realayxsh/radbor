@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Discord Login & Account | Radio</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>ACCOUNT</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page account-page" data-checkout-page="account">
+        <header class="checkout-heading">
+            <div class="subtitle">YOUR RADIO ACCOUNT</div>
+            <h1 data-account-heading>Sign in to Radio</h1>
+            <p data-account-intro>Use Discord to securely view your Radio account.</p>
+        </header>
+        <section class="checkout-card account-card">
+            <div data-account-login>
+                <p class="account-login-copy">Continue with Discord to connect your account. Radio only requests your public profile; it never asks for your Discord password.</p>
+                <a class="button w-button" data-account-login-link href="/auth/discord?returnTo=%2Faccount">Continue with Discord</a>
+            </div>
+            <div data-account-profile hidden>
+                <div class="account-profile">
+                    <div class="account-avatar-wrap">
+                        <img class="account-avatar" data-account-avatar alt="">
+                        <span class="account-avatar-fallback" data-account-avatar-fallback>R</span>
+                    </div>
+                    <div>
+                        <span class="checkout-kicker">SIGNED IN WITH DISCORD</span>
+                        <h2 data-account-name></h2>
+                        <p data-account-username></p>
+                        <code data-account-id></code>
+                    </div>
+                </div>
+                <section class="account-plans">
+                    <span class="checkout-kicker">PURCHASES MADE ON THIS WEBSITE</span>
+                    <h2 data-account-history-heading>Your payment submissions</h2>
+                    <p class="account-history-note">Submissions stay here while our team reviews them. Website approval is recorded here; activating Premium inside the bot requires a separate bot integration.</p>
+                    <p class="account-history-empty" data-account-history-empty>Loading your website payment history…</p>
+                    <div class="account-submissions" data-account-submissions></div>
+                </section>
+                <button class="account-logout" type="button" data-account-logout>Sign out</button>
+            </div>
+            <p class="payment-submit-status" data-account-status role="status" aria-live="polite"></p>
+        </section>
+        <a class="payment-back-link" href="/premium"><span aria-hidden="true">←</span> Browse Premium plans</a>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>

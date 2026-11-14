@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Choose Payment Method | Radio Premium</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page" data-checkout-page="method">
+        <div class="checkout-stepper" aria-label="Checkout progress">
+            <span class="checkout-step is-active"><b>01</b><span>Method</span></span>
+            <i></i><span class="checkout-step"><b>02</b><span>Payment</span></span>
+            <i></i><span class="checkout-step"><b>03</b><span>Confirmation</span></span>
+        </div>
+        <header class="checkout-heading">
+            <div class="subtitle">YOUR CHECKOUT</div>
+            <h1>Choose how to pay</h1>
+            <p>Pick a secure payment method for your Radio Premium plan.</p>
+        </header>
+        <section class="payment-checkout checkout-card">
+            <div class="checkout-plan-summary">
+                <span class="checkout-kicker">SELECTED PLAN</span>
+                <h2 data-plan-summary>Loading your plan…</h2>
+                <span class="checkout-lock">Secure checkout</span>
+            </div>
+            <div class="discord-signin" data-discord-signin>
+                <p data-login-status>Checking Discord sign-in…</p>
+                <div class="discord-user-card" data-discord-user-card hidden>
+                    <img data-discord-avatar alt="">
+                    <p class="discord-user" data-discord-user></p>
+                </div>
+                <a class="button w-button" data-discord-login href="/auth/discord">Continue with Discord</a>
+            </div>
+            <div class="payment-method-options" data-method-options hidden>
+                <a class="payment-method-card" data-method-link="upi" href="#">
+                    <span class="payment-method-icon" aria-hidden="true">₹</span>
+                    <span class="payment-method-copy"><strong>Pay with UPI</strong><small>Scan a QR or open your payment app</small></span>
+                    <span class="payment-method-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="payment-method-card" data-method-link="litecoin" href="#">
+                    <span class="payment-method-icon payment-method-icon--crypto" aria-hidden="true">Ł</span>
+                    <span class="payment-method-copy"><strong>Pay with Crypto</strong><small>Litecoin · live INR conversion</small></span>
+                    <span class="payment-method-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <p class="payment-setup-note"><span class="checkout-info-icon">i</span> Sign in with Discord to link this purchase to your account. We only request your public Discord profile—never your password.</p>
+            <p class="payment-submit-status" data-page-status role="status" aria-live="polite"></p>
+        </section>
+        <a class="payment-back-link" href="/premium"><span aria-hidden="true">←</span> Back to plans</a>
+        <p class="checkout-footer-note">Need a hand? <a href="https://discord.com/invite/3KqsXcFps4">Contact support</a></p>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>

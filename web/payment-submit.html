@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Submit Payment Proof | Radio Premium</title>
+    <link href="/style.css" rel="stylesheet" type="text/css">
+    <link href="/checkout.css" rel="stylesheet" type="text/css">
+    <link href="/radio-logo.png" rel="icon" type="image/png">
+</head>
+<body>
+    <div class="nav-bar checkout-nav">
+        <div class="navbar-wrapper">
+            <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
+            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+        </div>
+    </div>
+    <main class="payment-page" data-checkout-page="submit">
+        <div class="checkout-stepper" aria-label="Checkout progress">
+            <span class="checkout-step is-complete"><b>01</b><span>Method</span></span>
+            <i></i><span class="checkout-step is-complete"><b>02</b><span>Payment</span></span>
+            <i></i><span class="checkout-step is-active"><b>03</b><span>Confirmation</span></span>
+        </div>
+        <header class="checkout-heading">
+            <div class="subtitle">FINAL STEP</div>
+            <h1>Confirm your payment</h1>
+            <p>Share your payment details so our team can match and review your transfer.</p>
+        </header>
+        <section class="payment-checkout checkout-card checkout-proof-card">
+            <div class="checkout-plan-summary">
+                <span class="checkout-kicker">PAYMENT SUMMARY</span>
+                <h2 data-proof-plan></h2>
+                <p data-proof-summary></p>
+            </div>
+            <div class="discord-account-card" data-discord-account hidden>
+                <div class="discord-avatar" aria-hidden="true"><img data-discord-avatar alt=""><span data-avatar-fallback>R</span></div>
+                <div class="discord-account-details">
+                    <span class="checkout-kicker">SIGNED IN AS</span>
+                    <p data-discord-identity>Checking your Discord sign-in…</p>
+                    <label for="discord-user-id">Discord user ID</label>
+                    <input id="discord-user-id" type="text" data-discord-user-id readonly>
+                </div>
+                <span class="discord-verified" aria-label="Verified">✓</span>
+            </div>
+            <form class="payment-proof-form" data-proof-form>
+                <label class="checkout-field-label" for="discord-server-id">Discord server ID <span>OPTIONAL</span></label>
+                <input id="discord-server-id" name="serverId" type="text" inputmode="numeric" maxlength="20" placeholder="Enter the 17–20 digit server ID">
+                <label for="payment-transaction-id" data-transaction-label>Payment transaction reference</label>
+                <input id="payment-transaction-id" name="transactionId" type="text" maxlength="2048" required autocomplete="off" placeholder="Enter the UPI UTR ID">
+                <div class="payment-screenshot-fields" data-screenshot-fields>
+                    <label class="checkout-field-label" for="payment-screenshot">Payment screenshot <span>PNG, JPG OR WEBP · MAX 5 MB</span></label>
+                    <label class="payment-upload-zone" for="payment-screenshot">
+                        <span class="upload-icon" aria-hidden="true">↑</span>
+                        <strong data-upload-title>Choose a screenshot to upload</strong>
+                        <small data-upload-name>PNG, JPEG, or WebP · up to 5 MB</small>
+                    </label>
+                    <input class="payment-file-input" id="payment-screenshot" name="screenshot" type="file" accept="image/png,image/jpeg,image/webp" required>
+                </div>
+                <label class="payment-consent">
+                    <input name="consent" type="checkbox" required>
+                    <span data-consent-copy>I agree that my UTR and screenshot will be sent to Radio’s private Discord review channel.</span>
+                </label>
+                <button type="submit" class="button w-button payment-continue-button" data-submit-proof><span>Submit for review</span><span aria-hidden="true">→</span></button>
+            </form>
+            <p class="payment-submit-status" data-submit-status role="status" aria-live="polite"></p>
+            <div class="payment-safety-note"><span class="checkout-info-icon">i</span><p>Your payment details are sent to our private review channel. Payment is checked manually; submission does not automatically verify or activate Premium. Never upload passwords or recovery codes.</p></div>
+        </section>
+        <a class="payment-back-link" href="/premium"><span aria-hidden="true">←</span> Back to plans</a>
+        <p class="checkout-footer-note">Need help? <a href="https://discord.com/invite/3KqsXcFps4">Contact support</a></p>
+    </main>
+    <script src="/checkout-pages.js" defer></script>
+</body>
+</html>
