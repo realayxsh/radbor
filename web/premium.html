@@ -12,6 +12,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="/premium-ui.css" rel="stylesheet" type="text/css" />
+    <link href="/legal-pages.css" rel="stylesheet" type="text/css" />
 
     <script type="text/javascript">
         ! function(o, c) {
@@ -27,8 +28,8 @@
 <body>
      <div data-animation="default" data-collapse="small" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav-bar w-nav">
         <div class="navbar-wrapper">
-            <div class="nav-left"><a href="/" aria-current="page" class="nav-logo w-nav-brand w--current"><img src="/radio-logo.png" loading="lazy" alt="Radio bot logo"/></a>
-                <nav role="navigation" class="nav-links w-nav-menu"><a href="/premium" class="nav-link w-nav-link">Premium</a><a href="/commands" class="nav-link w-nav-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4" class="nav-link w-nav-link">Support</a><a href="/faq" class="nav-link w-nav-link">FAQ's</a></nav>
+            <div class="nav-left"><a href="/" class="nav-logo w-nav-brand premium-nav-brand" aria-label="Radio home"><span class="premium-nav-mark"><img src="/premium-artwork.jpg" loading="lazy" alt=""/></span><span class="premium-nav-wordmark"><strong>RADIO</strong><span>PREMIUM</span></span></a>
+                <nav role="navigation" class="nav-links w-nav-menu"><a href="/login" class="nav-link w-nav-link nav-mobile-login" data-auth-login>Login</a><a href="/premium" aria-current="page" class="nav-link w-nav-link w--current premium-nav-current">Premium</a><a href="/commands" class="nav-link w-nav-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4" class="nav-link w-nav-link">Support</a><a href="/faq" class="nav-link w-nav-link">FAQ's</a></nav>
             </div>
             <div class="nav-right">
                 <div class="auth-nav" data-auth-nav>
@@ -230,7 +231,7 @@
     <div class="footer">
         <div class="footer-top">
             <div class="wrapper">
-                <div class="footer-top-wrapper"><a href="#" class="footer-logo w-inline-block"><img src="/radio-logo.png" loading="lazy" alt="Radio bot logo"/></a>
+                <div class="footer-top-wrapper"><a href="/" class="footer-brand" aria-label="Radio home"><span class="footer-brand-mark"><img src="/radio-logo.png" loading="lazy" alt=""/></span><span class="footer-brand-copy"><strong>RADIO</strong><small>Music for your server</small></span></a>
                     <div class="w-layout-grid footer-links-grid">
                         <div class="footer-links">
                             <div class="footer-link-title">Radio</div><a href="/" aria-current="page" class="footer-link w--current">Home</a><a href="/premium" class="footer-link">Premium</a><a href="/commands" class="footer-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4" class="footer-link">Support</a><a href="/faq" class="footer-link">FAQ's</a>

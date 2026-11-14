@@ -7,6 +7,8 @@
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
           <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+          <link rel="stylesheet" href="/premium-ui.css" />
+          <link rel="stylesheet" href="/legal-pages.css" />
         <title>Radio - Commands</title>
         <script src="../code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" type="041fc3a34e6f74757cb979c1-text/javascript"></script>
         <script src="../cdnjs.cloudflare.com/ajax/libs/bodymovin/4.13.0/bodymovin.js" type="041fc3a34e6f74757cb979c1-text/javascript"></script>
@@ -37,9 +39,21 @@
            <div data-animation="default" data-collapse="medium" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="nav-bar w-nav">
                 <div class="navbar-wrapper">
                     <div class="nav-left"><a href="/" aria-current="page" class="nav-logo w-nav-brand w--current"><img src="/radio-logo.png" loading="lazy" alt="Radio bot logo"/></a>
-                        <nav role="navigation" class="nav-links w-nav-menu"><a href="/premium" class="nav-link w-nav-link">Premium</a><a href="/commands" class="nav-link w-nav-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4" class="nav-link w-nav-link">Support</a><a href="/faq" class="nav-link w-nav-link">FAQ's</a></nav>
+                        <nav role="navigation" class="nav-links w-nav-menu"><a href="/login" class="nav-link w-nav-link nav-mobile-login" data-auth-login>Login</a><a href="/premium" class="nav-link w-nav-link">Premium</a><a href="/commands" class="nav-link w-nav-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4" class="nav-link w-nav-link">Support</a><a href="/faq" class="nav-link w-nav-link">FAQ's</a></nav>
                     </div>
                     <div class="nav-right">
+                        <div class="auth-nav" data-auth-nav>
+                            <a href="/login" class="button w-button nav-account-desktop" data-auth-login>Login</a>
+                            <button type="button" class="nav-profile-button" data-auth-profile aria-label="Open account menu" aria-expanded="false" hidden>
+                                <img data-auth-avatar alt="" hidden>
+                                <span data-auth-fallback>R</span>
+                            </button>
+                            <div class="nav-profile-menu" data-auth-menu hidden>
+                                <a href="/account">My account</a>
+                                <button type="button" data-auth-logout>Sign out</button>
+                                <p data-auth-status role="status" aria-live="polite"></p>
+                            </div>
+                        </div>
                         <div class="nav-button-container"><a href="https://discord.com/api/oauth2/authorize?client_id=1097475016880304180&permissions=8&scope=applications.commands%20bot" class="button w-button">Invite Radio</a></div>
                         <div class="nav-mobile-button w-nav-button">
                             <div class="w-icon-nav-menu"></div>
@@ -75,6 +89,7 @@
                 <p class="commands-footnote">Type a command name to find it instantly.</p>
             </div>
         </main>
+        <script src="/auth-nav.js" defer></script>
         <script type="041fc3a34e6f74757cb979c1-text/javascript">
                 const commandCategories = [
                     {
@@ -193,7 +208,7 @@
         <div class="footer">
                 <div class="footer-top">
                     <div class="wrapper">
-                        <div class="footer-top-wrapper"><a href="#" class="footer-logo w-inline-block"><img src="/radio-logo.png" loading="lazy" alt="Radio bot logo"/></a>
+                        <div class="footer-top-wrapper"><a href="/" class="footer-brand" aria-label="Radio home"><span class="footer-brand-mark"><img src="/radio-logo.png" loading="lazy" alt=""/></span><span class="footer-brand-copy"><strong>RADIO</strong><small>Music for your server</small></span></a>
                             <div class="w-layout-grid footer-links-grid">
                                 <div class="footer-links">
                                     <div class="footer-link-title">Radio</div><a href="/" aria-current="page" class="footer-link w--current">Home</a><a href="/premium" class="footer-link">Premium</a><a href="/commands" class="footer-link">Commands</a><a href="https://discord.com/invite/3KqsXcFps4t" class="footer-link">Support</a><a href="/faq" class="footer-link">FAQ's</a>

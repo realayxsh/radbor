@@ -9,7 +9,7 @@
   };
 
   document.querySelectorAll("[data-auth-nav]").forEach((nav) => {
-    const login = nav.querySelector("[data-auth-login]");
+    const loginLinks = nav.querySelectorAll("[data-auth-login]");
     const profile = nav.querySelector("[data-auth-profile]");
     const avatar = nav.querySelector("[data-auth-avatar]");
     const fallback = nav.querySelector("[data-auth-fallback]");
@@ -61,7 +61,9 @@
       })
       .then(({ authenticated, discordUser }) => {
         if (!authenticated || !discordUser) return;
-        login.hidden = true;
+        loginLinks.forEach((login) => {
+          login.hidden = true;
+        });
         profile.hidden = false;
         fallback.textContent = (discordUser.globalName || discordUser.username || "R").charAt(0).toUpperCase();
         avatar.alt = `${discordUser.globalName || discordUser.username}'s Discord avatar`;
