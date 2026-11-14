@@ -12,7 +12,8 @@
     <div class="nav-bar checkout-nav">
         <div class="navbar-wrapper">
             <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
-            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+            <button class="checkout-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="checkout-main-navigation"><span></span><span></span><span></span></button>
+            <nav class="nav-links" id="checkout-main-navigation" data-checkout-nav aria-label="Main navigation"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a></nav>
         </div>
     </div>
     <main class="payment-page" data-checkout-page="payment">
@@ -64,7 +65,7 @@
             <a class="button w-button payment-continue-button" data-approve-payment href="/premium/submit" hidden><span>I've completed payment</span><span aria-hidden="true">→</span></a>
         </section>
         <a class="payment-back-link" data-back-method href="/premium/payment-method"><span aria-hidden="true">←</span> Change payment method</a>
-        <p class="checkout-footer-note">Questions about your payment? <a href="https://discord.com/invite/3KqsXcFps4">Contact support</a></p>
+        <p class="checkout-footer-note">Questions about this step? See our <a href="/faq">Frequently Asked Questions</a>.</p>
     </main>
     <script src="/checkout-pages.js" defer></script>
 </body>

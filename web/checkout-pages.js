@@ -38,6 +38,40 @@
   const pageStatus = document.querySelector("[data-page-status]");
   const currentPage = document.querySelector("[data-checkout-page]")?.dataset.checkoutPage;
 
+  document.querySelectorAll(".checkout-menu-toggle").forEach((toggle) => {
+    const navigation = document.getElementById(toggle.getAttribute("aria-controls"));
+    if (!navigation) return;
+
+    const closeMenu = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation menu");
+      navigation.classList.remove("is-open");
+    };
+
+    toggle.addEventListener("click", () => {
+      const isOpen = toggle.getAttribute("aria-expanded") === "true";
+      if (isOpen) {
+        closeMenu();
+      } else {
+        toggle.setAttribute("aria-expanded", "true");
+        toggle.setAttribute("aria-label", "Close navigation menu");
+        navigation.classList.add("is-open");
+      }
+    });
+
+    navigation.addEventListener("click", (event) => {
+      if (event.target.closest("a")) closeMenu();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!toggle.parentElement.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  });
+
   const getJson = async (url, options) => {
     const response = await fetch(url, options);
     const data = await response.json();
@@ -373,13 +407,13 @@
 
   const loadAccountHistory = async () => {
     const emptyState = document.querySelector("[data-account-history-empty]");
+    const emptyPanel = document.querySelector("[data-account-empty-state]");
     const historyList = document.querySelector("[data-account-submissions]");
     try {
       const { submissions } = await getJson("/api/payment/account");
       historyList.replaceChildren();
-      emptyState.textContent = submissions.length
-        ? ""
-        : "You haven’t submitted a payment through this website yet.";
+      emptyState.hidden = true;
+      emptyPanel.hidden = submissions.length > 0;
       submissions.forEach((submission) => {
         const card = document.createElement("article");
         card.className = "account-submission";
@@ -424,6 +458,8 @@
       });
       startApprovalCountdowns();
     } catch (error) {
+      emptyPanel.hidden = true;
+      emptyState.hidden = false;
       emptyState.textContent = error.message;
     }
   };

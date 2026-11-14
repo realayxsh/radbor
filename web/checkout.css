@@ -69,6 +69,7 @@ body::after {
 }
 
 .checkout-nav .navbar-wrapper {
+  position: relative;
   display: flex;
   width: min(100% - 40px, 1120px);
   min-height: 72px;
@@ -118,6 +119,44 @@ body::after {
 
 .checkout-nav .nav-links a:hover {
   color: #fff;
+}
+
+.checkout-menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.04);
+  color: #f7f8fc;
+  cursor: pointer;
+}
+
+.checkout-menu-toggle span {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.checkout-menu-toggle span:first-child {
+  transform: translateY(-6px);
+}
+
+.checkout-menu-toggle span:last-child {
+  transform: translateY(6px);
+}
+
+.checkout-menu-toggle:focus-visible,
+.checkout-nav .nav-links a:focus-visible {
+  outline: 2px solid var(--checkout-accent-light);
+  outline-offset: 3px;
 }
 
 .payment-page {
@@ -185,6 +224,20 @@ body::after {
   border-color: rgba(120, 226, 180, 0.36);
   background: rgba(120, 226, 180, 0.09);
   color: var(--checkout-green);
+  position: relative;
+  font-size: 0;
+}
+
+.checkout-step.is-complete b::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 11px;
+  border: solid currentColor;
+  border-width: 0 2px 2px 0;
+  content: "";
+  transform: translate(-50%, -65%) rotate(45deg);
 }
 
 .checkout-stepper > i:has(+ .checkout-step.is-active),
@@ -892,11 +945,13 @@ body::after {
 }
 
 .account-plans {
+  position: relative;
+  overflow: hidden;
   margin-top: 28px;
   padding: 22px;
-  border: 1px solid var(--checkout-line);
+  border: 1px solid rgba(255, 113, 133, 0.16);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.025);
+  background: radial-gradient(ellipse at 0% 0%, rgba(255, 49, 81, 0.07), transparent 55%), rgba(255, 255, 255, 0.025);
 }
 
 .account-plans h2 {
@@ -922,33 +977,91 @@ body::after {
   line-height: 1.6;
 }
 
+.account-empty-state {
+  display: grid;
+  justify-items: start;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 22px;
+  border: 1px dashed rgba(255, 113, 133, 0.25);
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 49, 81, 0.07), rgba(255, 255, 255, 0.015));
+}
+
+.account-empty-state[hidden] {
+  display: none !important;
+}
+
+.account-empty-mark {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 5px;
+  place-items: center;
+  border: 1px solid rgba(255, 113, 133, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 49, 81, 0.1);
+  color: #ff7185;
+  font-size: 23px;
+}
+
+.account-empty-state .checkout-kicker {
+  margin: 0;
+  color: #ff8495;
+}
+
+.account-empty-state h3 {
+  margin: 0;
+  color: #f7f8fc;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.account-empty-state p {
+  max-width: 480px;
+  color: #aab4c7;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.account-empty-state .button {
+  min-height: 44px;
+  margin: 5px 0 0;
+  padding: 10px 16px;
+  align-items: center;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 .account-submissions {
   display: grid;
   gap: 10px;
 }
 
 .account-submission {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 14px;
-  align-items: center;
-  justify-content: space-between;
+  align-items: start;
   gap: 14px;
-  border: 1px solid var(--checkout-line);
-  border-radius: 11px;
-  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 2px solid rgba(255, 113, 133, 0.58);
+  border-radius: 10px;
+  background: linear-gradient(110deg, rgba(255, 49, 81, 0.035), rgba(255, 255, 255, 0.02));
 }
 
 .account-submission h3 {
   margin: 0 0 4px;
   color: #f7f8fc;
-  font-size: 13px;
+  font-size: 15px;
+  line-height: 1.4;
 }
 
 .account-submission p {
   margin: 0;
   color: #9da7bb;
-  font-size: 11px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.55;
 }
 
 .account-submission-status {
@@ -958,7 +1071,8 @@ body::after {
   border-radius: 999px;
   background: rgba(255, 198, 102, 0.06);
   color: #f0c77b;
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 700;
 }
 
 .account-submission-status.is-approved {
@@ -983,10 +1097,11 @@ body::after {
 
 .account-submission-countdown,
 .account-submission-reason {
+  grid-column: 1 / -1;
   margin: 10px 0 0;
   color: #aab4c7;
-  font-size: 11px;
-  line-height: 1.55;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .account-submission-reason {
@@ -1522,7 +1637,8 @@ body::after {
   }
 
   .checkout-nav .navbar-wrapper {
-    width: calc(100% - 30px);
+    width: calc(100% - 24px);
+    gap: 8px;
   }
 
   .checkout-nav .nav-logo img {
@@ -1530,12 +1646,44 @@ body::after {
     height: 33px;
   }
 
+  .checkout-menu-toggle {
+    display: inline-flex;
+    position: relative;
+    margin-left: auto;
+  }
+
   .checkout-nav .nav-links {
-    gap: 14px;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 20;
+    display: none;
+    width: min(240px, calc(100vw - 24px));
+    padding: 7px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 10px;
+    background: #111621;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  .checkout-nav .nav-links.is-open {
+    display: flex;
   }
 
   .checkout-nav .nav-links a {
-    font-size: 10px;
+    display: flex;
+    min-height: 44px;
+    align-items: center;
+    padding: 10px 12px;
+    border-radius: 7px;
+    font-size: 14px;
+  }
+
+  .checkout-nav .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.06);
   }
 
   .payment-page {
@@ -1750,15 +1898,82 @@ body::after {
   .success-actions .button {
     width: 100%;
   }
+
+  .account-page .checkout-heading h1 {
+    font-size: 32px;
+    line-height: 1.14;
+  }
+
+  .account-page .checkout-heading > p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .account-card {
+    padding: 20px;
+  }
+
+  .account-login-copy {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .account-plans {
+    margin-top: 23px;
+    padding: 17px;
+  }
+
+  .account-plans h2 {
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  .account-plans p,
+  .account-history-empty {
+    font-size: 14px;
+  }
+
+  .account-submission {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .account-submission-content {
+    width: 100%;
+    min-width: 0;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .account-submission h3 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .account-submission p,
+  .account-submission-countdown,
+  .account-submission-reason {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .account-submission-status {
+    align-self: flex-start;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 360px) {
-  .checkout-nav .nav-links {
-    gap: 9px;
+  .checkout-nav .nav-logo {
+    gap: 7px;
+    font-size: 12px;
   }
 
-  .checkout-nav .nav-links a {
-    font-size: 9px;
+  .checkout-nav .nav-logo img {
+    width: 30px;
+    height: 30px;
   }
 
   .checkout-step {

@@ -12,7 +12,8 @@
     <div class="nav-bar checkout-nav">
         <div class="navbar-wrapper">
             <a href="/" class="nav-logo"><img src="/radio-logo.png" alt="Radio bot logo"><span>RADIO <b>PREMIUM</b></span></a>
-            <nav class="nav-links"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a><a href="https://discord.com/invite/3KqsXcFps4">Support</a></nav>
+            <button class="checkout-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="checkout-main-navigation"><span></span><span></span><span></span></button>
+            <nav class="nav-links" id="checkout-main-navigation" data-checkout-nav aria-label="Main navigation"><a href="/premium">Plans</a><a href="/account">Account</a><a href="/commands">Commands</a></nav>
         </div>
     </div>
     <main class="payment-page" data-checkout-page="method">
@@ -56,7 +57,7 @@
             <p class="payment-submit-status" data-page-status role="status" aria-live="polite"></p>
         </section>
         <a class="payment-back-link" href="/premium"><span aria-hidden="true">←</span> Back to plans</a>
-        <p class="checkout-footer-note">Need a hand? <a href="https://discord.com/invite/3KqsXcFps4">Contact support</a></p>
+        <p class="checkout-footer-note">Need help? See our <a href="/faq">Frequently Asked Questions</a>.</p>
     </main>
     <script src="/checkout-pages.js" defer></script>
 </body>
